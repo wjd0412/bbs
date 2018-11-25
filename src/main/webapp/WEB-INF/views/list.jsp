@@ -29,7 +29,7 @@
                 <th>제목</th>
                 <th>작성자</th>
                 <th>등록날짜</th>
-                <th>조회수</th>
+                <th>조회수0</th>
             </tr>
             <c:forEach var="l" items="${list}">
                 <tr onclick="location.href='/detail/${l.id}'">
