@@ -1,0 +1,55 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.0.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
+
+group = 'com.springinit'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    providedRuntime
+}
+
+dependencies {
+    compile('org.apache.tomcat.embed:tomcat-embed-jasper:8.0.36')
+    compile('javax.servlet:jstl:1.2')
+    compile('org.springframework.boot:spring-boot-starter-jdbc:1.4.1.RELEASE')
+    compile('mysql:mysql-connector-java:5.1.6')
+    compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1')
+    compile('org.mybatis:mybatis-spring:1.3.0')
+    compile('org.mybatis:mybatis:3.4.2')
+    compile('org.springframework.boot:spring-boot-devtools')
+
+    compile('org.springframework.boot:spring-boot-starter-web')
+
+    compile('org.projectlombok:lombok:1.16.8')
+    compile('org.apache.commons:commons-lang3:3.4')
+    compile('commons-io:commons-io:2.5')
+//    implementation('org.springframework.boot:spring-boot-starter-web')
+//    providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+//    testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+}
+
+//sourceSets {
+//    main.java.srcDirs=['src/main/java']
+//    main.resources.srcDirs=['src/main/resources', 'src/main/resources-' + target]
+//}
