@@ -38,7 +38,12 @@
                     <td>${l.subject}</td>
                     <td>${l.writer}</td>
                     <td><fmt:formatDate value="${l.register_datetime}" pattern="yyyy-MM-dd HH:mm:ss" /></td></td>
-                    <td><c:if test="${l.boardHit == '' || l.boardHit eq null}">0</c:if></td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${l.boardHit == '' || l.boardHit eq null}">0</c:when>
+                            <c:when test="${l.boardHit != '' || l.boardHit ne null}">${l.boardHit}</c:when>
+                        </c:choose>
+                    </td>
                 </tr>
             </c:forEach>
 
